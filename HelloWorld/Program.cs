@@ -5,11 +5,16 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            var numbers = new int[3];
-            numbers[0] = 1;
-            Console.WriteLine(numbers[0]);
-            Console.WriteLine(numbers[1]);
-            Console.WriteLine(numbers[2]);
+            var firstName = "Dhiaa";
+            string lastName = "Al-Shalabi";
+            String fullName = "Dhiaa Al-Shalabi";
+
+            var myFullName = string.Format("My name is {0} {1}", firstName, lastName);
+
+            var names = new string[2] { firstName, lastName };
+            var formattedNames = string.Join(", ", names);
+
+            Console.WriteLine(formattedNames);
         }
     }
 }
