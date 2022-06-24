@@ -2,39 +2,31 @@
 {
     static void Main(string[] args)
     {
-        var numbers = new[] { 3, 7, 9, 2, 14, 6 };
-        
-        // Length()
-        Console.WriteLine("Length: "+numbers.Length);
-        
-        // IndexOf()
-        var index = Array.IndexOf(numbers, 9);
-        Console.WriteLine("Index of 9: "+index);
-        
-        // Clear()
-        Array.Clear(numbers,0,2);
-        
-        Console.WriteLine("Effect of Clear()");
+        var numbers = new List<int> { 1, 2, 3, 4 };
+        numbers.Add(1);
+        numbers.AddRange(new int[] { 5, 6, 7 });
+        foreach (var number in numbers)
+            Console.WriteLine(number);
+
+        Console.Write("Index of 2: " + numbers.IndexOf(2));
+        Console.WriteLine("Last index of 1: " + numbers.LastIndexOf(1));
+        Console.WriteLine("Count items: "+numbers.Count);
+
+        numbers.Remove(1);
+        foreach (var number in numbers)
+            Console.WriteLine(number);
+
+        for (int i = 0; i < numbers.Count; i++)
+        {
+            if (numbers[i] == 1)
+                numbers.Remove(numbers[i]);
+        }
+
+        Console.WriteLine("Last effected array");
         foreach (var number in numbers)
             Console.WriteLine(number);
         
-        // Copy()
-        int[] another = new int[3];
-        Array.Copy(numbers,another,3);
-        Console.WriteLine("Effect of Copy()");
-        foreach (var i in another)
-            Console.WriteLine(i);
-        
-        // Sort()
-        Array.Sort(numbers);
-        Console.WriteLine("Effect of Sort()");
-        foreach (var i in numbers)
-            Console.WriteLine(i);
-        
-        // Reverse()
-        Array.Reverse(numbers);
-        Console.WriteLine("Effect of Reverse()");
-        foreach (var number in numbers)
-            Console.WriteLine(number);
+        numbers.Clear();
+        Console.WriteLine("Count after clear: "+numbers.Count);
     }
 }
