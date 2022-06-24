@@ -1,24 +1,16 @@
 ﻿
-namespace HelloWorld
-{
-    public enum ShippingMethod
-    {
-        RegularAirMail = 1,
-        RegisterAirMail = 2,
-        Express = 3
-    }
-
     class Program
     {
         static void Main(string[] args)
         {
-            var method = ShippingMethod.Express;
-            Console.WriteLine((int)method);
-            Console.WriteLine(method.ToString());
+            var a = 9;
+            var b = a;
+            b++;
+            Console.WriteLine($"a: {a}, b: {b}");
 
-            var methodName = "Express";
-            var shippingMethod = Enum.Parse(typeof(ShippingMethod), methodName);
-            Console.WriteLine(shippingMethod.ToString());
+            var array1 = new int[3] { 1, 2, 3 };
+            var array2 = array1;
+            array2[0] = 0;
+            Console.WriteLine($"array1[0]: {0}, array2[0]: {1}",array1[0],array2[0]);
         }
     }
-}
