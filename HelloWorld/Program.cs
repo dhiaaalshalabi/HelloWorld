@@ -2,31 +2,24 @@
 {
     static void Main(string[] args)
     {
-        var numbers = new List<int> { 1, 2, 3, 4 };
-        numbers.Add(1);
-        numbers.AddRange(new int[] { 5, 6, 7 });
-        foreach (var number in numbers)
-            Console.WriteLine(number);
-
-        Console.Write("Index of 2: " + numbers.IndexOf(2));
-        Console.WriteLine("Last index of 1: " + numbers.LastIndexOf(1));
-        Console.WriteLine("Count items: "+numbers.Count);
-
-        numbers.Remove(1);
-        foreach (var number in numbers)
-            Console.WriteLine(number);
-
-        for (int i = 0; i < numbers.Count; i++)
-        {
-            if (numbers[i] == 1)
-                numbers.Remove(numbers[i]);
-        }
-
-        Console.WriteLine("Last effected array");
-        foreach (var number in numbers)
-            Console.WriteLine(number);
+        var dateTime = new DateTime(2022, 7, 1);
+        var now = DateTime.Now;
+        var today = DateTime.Today;
         
-        numbers.Clear();
-        Console.WriteLine("Count after clear: "+numbers.Count);
+        Console.WriteLine("Hour: "+now.Hour);
+        Console.WriteLine("Minute: "+now.Minute);
+        
+        // DateTime are mutable
+        var tomrrow = now.AddDays(1);
+        var yesterday = now.AddDays(-1);
+        
+        Console.WriteLine(tomrrow);
+        Console.WriteLine(yesterday);
+        
+        Console.WriteLine(now.ToLongDateString());
+        Console.WriteLine(now.ToShortDateString());
+        Console.WriteLine(now.ToLongTimeString());
+        Console.WriteLine(now.ToShortTimeString());
+        Console.WriteLine(now.ToString("yyyy-MM-dd"));
     }
 }
